@@ -12,5 +12,7 @@
     "sourceType": "module"
   },
   "plugins": ["react"],
-  "rules": {}
+  "rules": {
+    "object-curly-newline": 0
+  }
 }

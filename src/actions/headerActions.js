@@ -7,14 +7,6 @@ const updateSearchTerm = (searchTerm) => (dispatch) => {
   });
 };
 
-const updateSearchAPI = (apiName) => (dispatch) => {
-  dispatch({
-    type: Constants.HEADER.UPDATE_SEARCH_API,
-    payload: apiName,
-  });
-};
-
 export default {
   updateSearchTerm,
-  updateSearchAPI,
 };
