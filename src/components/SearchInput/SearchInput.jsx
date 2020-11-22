@@ -1,5 +1,5 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import IconButton from '@material-ui/core/IconButton';
 import SearchIcon from '@material-ui/icons/Search';
@@ -14,7 +14,9 @@ import searchActions from '../../actions/searchActions';
 import useStyles from './style';
 
 export default function SearchBar() {
-  const [searchTerm, setSearchTerm] = React.useState('');
+  const currentSearchTerm = useSelector((state) => state.search.searchTerm);
+
+  const [searchTerm, setSearchTerm] = React.useState(currentSearchTerm);
   const dispatch = useDispatch();
   const history = useHistory();
   const classes = useStyles();
@@ -34,12 +36,13 @@ export default function SearchBar() {
   }
 
   return (
-    <Paper className={classes.paperWrapper} component="div">
+    <Paper className={classes.wrapper} component="div">
       <InputBase
         placeholder="Search"
         onChange={handleSearchTermChange}
         onKeyPress={handleKeyPress}
         className={classes.inputBase}
+        defaultValue={currentSearchTerm}
         color="secondary"
       />
       <IconButton aria-label="search" onClick={onSearch}>
