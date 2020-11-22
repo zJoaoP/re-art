@@ -1,32 +1,21 @@
+import PropTypes from 'prop-types';
 import React from 'react';
-import { useSelector } from 'react-redux';
 
-import api from '../../service/rijks';
+import Grid from '@material-ui/core/Grid';
+import ContentCard from '../ContentCard/ContentCard';
 
-export default function ContentGrid() {
-  const { searchTerm } = useSelector((state) => state.search);
-  const [loading, setLoading] = React.useState(false);
-  const [content, setContent] = React.useState([]);
-
-  React.useEffect(() => {
-    if (searchTerm !== '') {
-      setLoading(true);
-      api
-        .fetchSearchTerm(searchTerm)
-        .then((response) => response.json())
-        .then((response) => setContent(response));
-
-      setLoading(false);
-    }
-    return () => {};
-  }, [searchTerm]);
-
-  console.log(content);
-  console.log(loading);
-
+export default function ContentGrid({ content }) {
   return (
-    <div name="content-grid">
-      <h1>E</h1>
-    </div>
+    <Grid container alignItems="stretch">
+      {content.map((artwork) => (
+        <Grid item xs={12} sm={6} md={4} lg={3}>
+          <ContentCard key={artwork.id} artwork={artwork} />
+        </Grid>
+      ))}
+    </Grid>
   );
 }
+
+ContentGrid.propTypes = {
+  content: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
