@@ -2,16 +2,17 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
   wrapper: {
-    marginTop: '200px',
+    // marginTop: '200px',
     // [theme.breakpoints.down('sm')]: {
     //   marginTop: '200px',
     // },
     // [theme.breakpoints.between('sm', 'md')]: {
     //   marginTop: '270px',
     // },
-    [theme.breakpoints.up('md')]: {
-      marginTop: '225px',
-    },
+    // [theme.breakpoints.up('md')]: {
+    //   marginTop: '225px',
+    // },
+    minHeight: '100vh',
   },
   title: {
     color: '#FFFFFF',

@@ -14,12 +14,17 @@ export default function CentralSearchBar() {
       container
       direction="column"
       alignItems="center"
+      justify="center"
       className={classes.wrapper}
     >
-      <Typography variant="h1" className={classes.title}>
-        Re-Art
-      </Typography>
-      <SearchInput className={classes.searchInput} />
+      <Grid item>
+        <Typography variant="h1" className={classes.title}>
+          Re-Art
+        </Typography>
+      </Grid>
+      <Grid item>
+        <SearchInput className={classes.searchInput} />
+      </Grid>
     </Grid>
   );
 }
