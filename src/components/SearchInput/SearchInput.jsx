@@ -20,6 +20,7 @@ export default function SearchBar() {
   const classes = useStyles();
 
   function onSearch() {
+    if (searchTerm === '') return;
     dispatch(searchActions.updateSearchTerm(searchTerm));
     history.push('/search');
   }
