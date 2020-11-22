@@ -1,4 +1,4 @@
-const HEADER = {
+export const HEADER = {
   UPDATE_SEARCH_TERM: 'UPDATE_SEARCH_TERM',
 };
 
