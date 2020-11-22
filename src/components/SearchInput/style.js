@@ -1,20 +1,16 @@
-import styled from 'styled-components';
+import { makeStyles } from '@material-ui/core/styles';
 
-import InputBase from '@material-ui/core/InputBase';
-import Paper from '@material-ui/core/Paper';
+const useStyles = makeStyles(() => ({
+  paperWrapper: {
+    maxWidth: '90%',
+    width: '500px',
 
-export const StyledPaper = styled(Paper)`
-  margin-left: 32px;
-  margin-right: 32px;
-  width: 500px;
-  display: flex;
-  align-items: center;
-`;
+    display: 'flex',
+  },
+  inputBase: {
+    flex: 1,
+    marginLeft: '16px',
+  },
+}));
 
-export const StyledInputBase = styled(InputBase)`
-  margin-left: 16px;
-`;
-
-export const InputBaseWrapper = styled.div``;
-
-export const SearchInputWrapper = styled.div``;
+export default useStyles;

@@ -2,19 +2,26 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 
 import IconButton from '@material-ui/core/IconButton';
-
 import SearchIcon from '@material-ui/icons/Search';
 
-import { StyledPaper, StyledInputBase } from './style';
+import InputBase from '@material-ui/core/InputBase';
+import Paper from '@material-ui/core/Paper';
+
+import { useHistory } from 'react-router-dom';
 
 import headerActions from '../../actions/headerActions';
+
+import useStyles from './style';
 
 export default function SearchBar() {
   const [searchTerm, setSearchTerm] = React.useState('');
   const dispatch = useDispatch();
+  const history = useHistory();
+  const classes = useStyles();
 
   function onSearch() {
     dispatch(headerActions.updateSearchTerm(searchTerm));
+    history.push('/search');
   }
 
   function handleSearchTermChange(event) {
@@ -26,16 +33,16 @@ export default function SearchBar() {
   }
 
   return (
-    <StyledPaper component="div">
-      <StyledInputBase
+    <Paper className={classes.paperWrapper} component="div">
+      <InputBase
         placeholder="Search"
         onChange={handleSearchTermChange}
         onKeyPress={handleKeyPress}
-        style={{ flex: '1' }}
+        className={classes.inputBase}
       />
       <IconButton aria-label="search" onClick={onSearch}>
         <SearchIcon />
       </IconButton>
-    </StyledPaper>
+    </Paper>
   );
 }
