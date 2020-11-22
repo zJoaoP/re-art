@@ -1,13 +1,7 @@
 import React from 'react';
 
-import ContentGrid from '../components/ContentGrid/ContentGrid';
-import Header from '../components/Header/Header';
+import CentralSearchBar from '../components/CentralSearchBar/CentralSearchBar';
 
 export default function Home() {
-  return (
-    <div>
-      <Header />
-      <ContentGrid />
-    </div>
-  );
+  return <CentralSearchBar />;
 }

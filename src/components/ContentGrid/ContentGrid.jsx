@@ -26,7 +26,7 @@ export default function ContentGrid() {
 
   return (
     <div name="content-grid">
-      <h1>ASDASD</h1>
+      <h1>E</h1>
     </div>
   );
 }
