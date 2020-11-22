@@ -1,10 +1,10 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
-  appBar: {},
-  toolBar: {
-    flex: 1,
+  appBar: {
+    position: 'inherit',
   },
+  toolBar: {},
   title: {
     textAlign: 'center',
     fontSize: '20px',
