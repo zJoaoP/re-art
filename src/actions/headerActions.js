@@ -1,4 +1,4 @@
-import { HEADER } from '../helpers/Constants';
+import { HEADER } from '../helpers/constants';
 
 // TODO: Rename this to "searchData", because its not header-exclusive
 const updateSearchTerm = (searchTerm) => (dispatch) => {

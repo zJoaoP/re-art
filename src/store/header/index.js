@@ -1,4 +1,4 @@
-import { HEADER } from '../../helpers/Constants';
+import { HEADER } from '../../helpers/constants';
 
 const INITIAL_STATE = {
   searchTerm: '',
