@@ -1,53 +1,29 @@
-// import { Typography } from '@material-ui/core';
-// import styled from 'styled-components';
-
-// import FavoriteIcon from '@material-ui/icons/Favorite';
-
-// export const SearchInputWrapper = styled.div``;
-
-// export const AppBarWrapper = styled.div``;
-
-// export const ToolbarWrapper = styled.div`
-//   background-color: var(--white);
-// `;
-
-// export const Title = styled(Typography)`
-//   color: var(--oxfordBlue);
-// `;
-
-// export const StyledFavoritesButton = styled(FavoriteIcon)`
-//   color: var(--redSalsa);
-// `;
-
-// export default AppBarWrapper;
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
-  wrapper: {
-    marginTop: '200px',
-    // [theme.breakpoints.down('sm')]: {
-    //   marginTop: '200px',
-    // },
-    // [theme.breakpoints.between('sm', 'md')]: {
-    //   marginTop: '270px',
-    // },
-    [theme.breakpoints.up('md')]: {
-      marginTop: '225px',
-    },
+  appBar: {},
+  toolBar: {
+    flex: 1,
   },
   title: {
+    textAlign: 'center',
+    fontSize: '20px',
+    margin: '20px',
+    overflow: 'inherit',
+  },
+  space: {
+    flexGrow: 1,
+  },
+  favoritesButton: {
+    margin: '12px',
+    // alignContent: 'flex-end',
     [theme.breakpoints.down('sm')]: {
-      fontSize: '72px',
-      marginBottom: '16px',
+      flexGrow: 1,
+      // alignContent: 'center',
     },
-    [theme.breakpoints.between('sm', 'md')]: {
-      fontSize: '96px',
-      marginBottom: '32px',
-    },
-    [theme.breakpoints.up('md')]: {
-      fontSize: '96px',
-      marginBottom: '32px',
-    },
+  },
+  favoriteIcon: {
+    color: '#ff0000',
   },
 }));
 
