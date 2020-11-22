@@ -9,7 +9,7 @@ import Paper from '@material-ui/core/Paper';
 
 import { useHistory } from 'react-router-dom';
 
-import headerActions from '../../actions/headerActions';
+import searchActions from '../../actions/searchActions';
 
 import useStyles from './style';
 
@@ -20,7 +20,7 @@ export default function SearchBar() {
   const classes = useStyles();
 
   function onSearch() {
-    dispatch(headerActions.updateSearchTerm(searchTerm));
+    dispatch(searchActions.updateSearchTerm(searchTerm));
     history.push('/search');
   }
 

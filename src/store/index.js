@@ -1,10 +1,10 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 
-import header from './header';
+import search from './search';
 
 const reducer = combineReducers({
-  header,
+  search,
 });
 
 export default createStore(reducer, applyMiddleware(thunk));
