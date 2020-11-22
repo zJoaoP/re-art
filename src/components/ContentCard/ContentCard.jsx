@@ -19,7 +19,7 @@ import useStyles from './style';
 export default function ContentCard({ artwork }) {
   const classes = useStyles();
   return (
-    <Grid container>
+    <Grid container className={classes.wrapper}>
       <Grid item xs component={Card} className={classes.card}>
         <CardHeader
           title={artwork.title}
