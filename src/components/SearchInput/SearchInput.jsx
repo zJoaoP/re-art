@@ -39,6 +39,7 @@ export default function SearchBar() {
         onChange={handleSearchTermChange}
         onKeyPress={handleKeyPress}
         className={classes.inputBase}
+        color="secondary"
       />
       <IconButton aria-label="search" onClick={onSearch}>
         <SearchIcon />

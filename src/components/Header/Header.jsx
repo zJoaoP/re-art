@@ -1,4 +1,5 @@
-import { AppBar, Toolbar, Typography } from '@material-ui/core';
+import { AppBar, Toolbar, Typography, Button } from '@material-ui/core';
+
 import React from 'react';
 
 import SearchInput from '../SearchInput/SearchInput';
@@ -8,8 +9,9 @@ export default function Header() {
     <div>
       <AppBar>
         <Toolbar>
-          <Typography>ASDAS</Typography>
+          <Typography>Re-Art</Typography>
           <SearchInput />
+          <Button>Favorites</Button>
         </Toolbar>
       </AppBar>
     </div>
