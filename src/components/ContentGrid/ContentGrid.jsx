@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import api from '../../service/rijks';
 
 export default function ContentGrid() {
-  const { searchTerm } = useSelector((state) => state.header);
+  const { searchTerm } = useSelector((state) => state.search);
   const [loading, setLoading] = React.useState(false);
   const [content, setContent] = React.useState([]);
 
