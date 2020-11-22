@@ -22,8 +22,8 @@ export default function CentralSearchBar() {
           Re-Art
         </Typography>
       </Grid>
-      <Grid item>
-        <SearchInput className={classes.searchInput} />
+      <Grid item className={classes.searchInputWrapper}>
+        <SearchInput />
       </Grid>
     </Grid>
   );

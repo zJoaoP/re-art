@@ -14,6 +14,9 @@ const useStyles = makeStyles((theme) => ({
     // },
     minHeight: '100vh',
   },
+  searchInputWrapper: {
+    marginBottom: '20vh',
+  },
   title: {
     color: '#FFFFFF',
     [theme.breakpoints.down('sm')]: {
