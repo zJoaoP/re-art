@@ -41,7 +41,7 @@ export default function App() {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/search" component={Search} />
-            <Route path="/artwork/:artworkID" component={Artwork} />
+            <Route path="/artwork/:objectNumber" component={Artwork} />
           </Switch>
         </Provider>
       </BrowserRouter>

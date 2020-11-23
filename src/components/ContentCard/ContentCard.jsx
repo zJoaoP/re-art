@@ -30,7 +30,7 @@ export default function ContentCard({ artwork }) {
           subheaderTypographyProps={{ color: 'secondary' }}
         />
         <CardActionArea>
-          <Link to={`/artwork/${artwork.id}`}>
+          <Link to={`/artwork/${artwork.objectNumber}`}>
             <CardMedia
               className={classes.media}
               image={artwork.hasImage ? artwork.webImage.url : NoImage}
