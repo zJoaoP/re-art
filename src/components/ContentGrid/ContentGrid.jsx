@@ -8,8 +8,8 @@ export default function ContentGrid({ content }) {
   return (
     <Grid container alignItems="stretch">
       {content.map((artwork) => (
-        <Grid item xs={12} sm={6} md={4} lg={3}>
-          <ContentCard key={artwork.id} artwork={artwork} />
+        <Grid item xs={12} sm={6} md={4} lg={3} key={artwork.id}>
+          <ContentCard artwork={artwork} />
         </Grid>
       ))}
     </Grid>
