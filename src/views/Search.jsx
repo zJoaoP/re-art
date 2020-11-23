@@ -1,4 +1,6 @@
 import React from 'react';
+
+import { useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 import CircularProgress from '@material-ui/core/CircularProgress';
@@ -18,8 +20,13 @@ function Loading() {
 // TODO: Handle empty response from museum.
 export default function Search() {
   const { searchTerm } = useSelector((state) => state.search);
-  const [content, setContent] = React.useState([]);
   const [loading, setLoading] = React.useState(false);
+  const [content, setContent] = React.useState([]);
+
+  if (searchTerm === '') {
+    const history = useHistory();
+    history.push('/');
+  }
 
   React.useEffect(() => {
     setLoading(true);
