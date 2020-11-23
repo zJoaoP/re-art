@@ -7,12 +7,13 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import store from './store/index';
 
+import Artwork from './views/Artwork';
 import Search from './views/Search';
 import Home from './views/Home';
 
 const theme = createMuiTheme({
   root: {
-    backgroundColor: '#fff000',
+    backgroundColor: '#ffffff',
   },
   palette: {
     primary: {
@@ -40,6 +41,7 @@ export default function App() {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/search" component={Search} />
+            <Route path="/artwork/:artworkID" component={Artwork} />
           </Switch>
         </Provider>
       </BrowserRouter>
