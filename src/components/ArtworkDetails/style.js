@@ -1,6 +1,6 @@
 import { makeStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   wrapper: {},
   image: {
     display: 'box',
@@ -12,15 +12,6 @@ const useStyles = makeStyles((theme) => ({
   },
   text: {
     margin: '16px',
-  },
-  collapseButton: {
-    transform: 'rotate(0deg)',
-    transition: theme.transitions.create('transform', {
-      duration: theme.transitions.duration.shortest,
-    }),
-  },
-  expandedCollapseButton: {
-    transform: 'rotate(180deg)',
   },
 }));
 

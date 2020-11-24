@@ -2,57 +2,12 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import Typography from '@material-ui/core/Typography';
-
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import IconButton from '@material-ui/core/IconButton';
-import Collapse from '@material-ui/core/Collapse';
 import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid';
 
-import clsx from 'clsx';
-
+import ExtensibleContainer from '../ExtensibleContainer/ExtensibleContainer';
 import Spinner from '../Spinner/Spinner';
 import api from '../../service/rijks';
 import useStyles from './style';
-
-function TextCollapse({ header, children }) {
-  const [expanded, setExpanded] = React.useState(false);
-  function handleExpandClick() {
-    setExpanded(!expanded);
-  }
-
-  const classes = useStyles();
-
-  return (
-    <Paper square>
-      <Grid container alignItems="center" justify="space-between">
-        <Grid item xs={6} style={{ marginLeft: '12px' }}>
-          <Typography>
-            <strong>{header}</strong>
-          </Typography>
-        </Grid>
-        <Grid item xs={6} style={{ flexBasis: '0' }}>
-          <IconButton
-            onClick={handleExpandClick}
-            className={clsx(classes.collapseButton, {
-              [classes.expandedCollapseButton]: expanded,
-            })}
-          >
-            <ExpandMoreIcon />
-          </IconButton>
-        </Grid>
-        <Grid item xs={12}>
-          <Collapse in={expanded}>{children}</Collapse>
-        </Grid>
-      </Grid>
-    </Paper>
-  );
-}
-
-TextCollapse.propTypes = {
-  header: PropTypes.string.isRequired,
-  children: PropTypes.objectOf(PropTypes.any).isRequired,
-};
 
 export default function ArtworkDetails({ objectNumber }) {
   const [content, setContent] = React.useState(undefined);
@@ -98,17 +53,17 @@ export default function ArtworkDetails({ objectNumber }) {
       <Typography variant="body2" align="center" gutterBottom>
         {content.label.makerLine}
       </Typography>
-      <TextCollapse header="Description">
+      <ExtensibleContainer header="Description">
         <Typography align="justify" className={classes.text}>
           {content.description}
         </Typography>
-      </TextCollapse>
-      <TextCollapse header="Technical Description">
+      </ExtensibleContainer>
+      <ExtensibleContainer header="Technical Description">
         <Typography align="justify" className={classes.text}>
           {content.plaqueDescriptionEnglish}
         </Typography>
-      </TextCollapse>
-      <TextCollapse header="References">
+      </ExtensibleContainer>
+      <ExtensibleContainer header="References">
         <ul>
           {content.documentation.map((document) => (
             <li key={document}>
@@ -118,7 +73,7 @@ export default function ArtworkDetails({ objectNumber }) {
             </li>
           ))}
         </ul>
-      </TextCollapse>
+      </ExtensibleContainer>
     </Paper>
   );
 }
