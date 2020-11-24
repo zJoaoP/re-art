@@ -20,16 +20,22 @@ export default function useSearchResults() {
   }
 
   React.useEffect(() => {
+    let mounted = true;
+
     setLoading(true);
     api.fetchSearchTerm(searchTerm, page).then((response) => {
-      setContent(
-        page > 1
-          ? removeDuplicates([...content, ...response.artObjects])
-          : removeDuplicates([...response.artObjects])
-      );
-      setLoading(false);
+      if (mounted) {
+        setContent(
+          page > 1
+            ? removeDuplicates([...content, ...response.artObjects])
+            : removeDuplicates([...response.artObjects])
+        );
+        setLoading(false);
+      }
     });
-    return () => {};
+    return () => {
+      mounted = false;
+    };
   }, [searchTerm, page]);
 
   return {

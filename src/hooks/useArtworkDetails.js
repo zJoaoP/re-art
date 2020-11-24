@@ -8,18 +8,26 @@ export default function useArtworkDetails(objectNumber) {
   const [found, setFound] = React.useState(true);
 
   React.useEffect(() => {
+    let mounted = true;
+
     api
       .fetchArtworkByNumber(objectNumber)
       .then((response) => {
-        setContent(response.artObject);
-        setLoading(false);
-        setFound(true);
+        if (mounted) {
+          setContent(response.artObject);
+          setLoading(false);
+          setFound(true);
+        }
       })
       .catch(() => {
-        setLoading(false);
-        setFound(false);
+        if (mounted) {
+          setLoading(false);
+          setFound(false);
+        }
       });
-    return () => {};
+    return () => {
+      mounted = false;
+    };
   }, [objectNumber]);
 
   return {
