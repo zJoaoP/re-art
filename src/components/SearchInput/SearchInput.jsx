@@ -24,6 +24,8 @@ export default function SearchBar() {
   function onSearch() {
     if (searchTerm === '') return;
     dispatch(searchActions.updateSearchTerm(searchTerm));
+    dispatch(searchActions.resetPage());
+
     history.push('/search');
   }
 

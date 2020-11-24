@@ -13,7 +13,8 @@ export default function Search() {
   return (
     <div id="search-wrapper">
       <Header />
-      {loading ? <Spinner /> : <ContentGrid content={content} />}
+      <ContentGrid content={content} />
+      {loading && <Spinner />}
     </div>
   );
 }
