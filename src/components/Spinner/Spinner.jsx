@@ -2,18 +2,9 @@ import React from 'react';
 
 import CircularProgress from '@material-ui/core/CircularProgress';
 
+import useStyles from './style';
+
 export default function Loading() {
-  return (
-    <CircularProgress
-      style={{
-        position: 'absolute',
-        height: '50px',
-        width: '50px',
-        top: '50%',
-        left: '50%',
-        marginLeft: '-25px',
-        marginTop: '-25px',
-      }}
-    />
-  );
+  const classes = useStyles();
+  return <CircularProgress className={classes.spinner} />;
 }
