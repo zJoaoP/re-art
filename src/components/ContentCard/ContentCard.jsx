@@ -19,22 +19,23 @@ import NoImage from '../../assets/images/no_image.jpg';
 
 import useStyles from './style';
 
-export default function ContentCard({ artwork }) {
+export default function ContentCard({ title, subtitle, url, imageUrl }) {
   const classes = useStyles();
+  const hasImage = imageUrl !== undefined;
   return (
     <Grid container className={classes.wrapper}>
       <Grid item xs component={Card} className={classes.card}>
         <CardHeader
-          title={artwork.title}
-          subheader={artwork.principalOrFirstMaker}
+          title={title}
+          subheader={subtitle}
           subheaderTypographyProps={{ color: 'secondary' }}
         />
         <CardActionArea>
-          <Link to={`/artwork/${artwork.objectNumber}`}>
+          <Link to={url}>
             <CardMedia
               className={classes.media}
-              image={artwork.hasImage ? artwork.webImage.url : NoImage}
-              title={artwork.title}
+              image={hasImage ? imageUrl : NoImage}
+              title={title}
               component="img"
             />
           </Link>
@@ -51,7 +52,14 @@ export default function ContentCard({ artwork }) {
     </Grid>
   );
 }
-
+// title, subtitle, url, image
 ContentCard.propTypes = {
-  artwork: PropTypes.objectOf(PropTypes.any).isRequired,
+  title: PropTypes.string.isRequired,
+  subtitle: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
+  imageUrl: PropTypes.string,
+};
+
+ContentCard.defaultProps = {
+  imageUrl: undefined,
 };

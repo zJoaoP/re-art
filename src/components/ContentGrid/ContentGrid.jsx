@@ -9,7 +9,12 @@ export default function ContentGrid({ content }) {
     <Grid container alignItems="stretch">
       {content.map((artwork) => (
         <Grid item xs={12} sm={6} md={4} lg={3} key={artwork.id}>
-          <ContentCard artwork={artwork} />
+          <ContentCard
+            title={artwork.title}
+            subtitle={artwork.principalOrFirstMaker}
+            url={`/artwork/${artwork.objectNumber}`}
+            imageUrl={artwork.hasImage ? artwork.webImage.url : undefined}
+          />
         </Grid>
       ))}
     </Grid>
