@@ -12,9 +12,6 @@ import Search from './views/Search';
 import Home from './views/Home';
 
 const theme = createMuiTheme({
-  root: {
-    backgroundColor: '#ffffff',
-  },
   palette: {
     primary: {
       main: '#ffffff',
