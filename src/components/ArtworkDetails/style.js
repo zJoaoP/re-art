@@ -12,6 +12,7 @@ const useStyles = makeStyles(() => ({
   },
   text: {
     margin: '16px',
+    wordWrap: 'break-word',
   },
 }));
 
