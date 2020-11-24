@@ -4,38 +4,15 @@ import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 
+import useArtworkDetails from '../../hooks/useArtworkDetails';
+
 import ExtensibleContainer from '../ExtensibleContainer/ExtensibleContainer';
 import Spinner from '../Spinner/Spinner';
-import api from '../../service/rijks';
 import useStyles from './style';
 
 export default function ArtworkDetails({ objectNumber }) {
-  const [content, setContent] = React.useState(undefined);
-  const [loading, setLoading] = React.useState(true);
-  const [found, setFound] = React.useState(true);
-
+  const { loading, found, content } = useArtworkDetails(objectNumber);
   const classes = useStyles();
-
-  async function fetchArtworkByNumber() {
-    // setLoading(true);
-    api
-      .fetchArtworkByNumber(objectNumber)
-      .then((response) => {
-        setContent(response.artObject);
-        setLoading(false);
-        setFound(true);
-      })
-      .catch(() => {
-        setLoading(false);
-        setFound(false);
-      });
-    return 0;
-  }
-
-  React.useEffect(() => {
-    fetchArtworkByNumber();
-    return () => {};
-  }, [objectNumber]);
 
   if (!found) return <h1>Not Found</h1>;
   if (loading) return <Spinner />;
@@ -64,7 +41,7 @@ export default function ArtworkDetails({ objectNumber }) {
         </Typography>
       </ExtensibleContainer>
       <ExtensibleContainer header="References">
-        <ul>
+        <ul id="artwork-references">
           {content.documentation.map((document) => (
             <li key={document}>
               <Typography align="justify" className={classes.text}>
