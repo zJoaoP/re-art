@@ -19,7 +19,12 @@ export default function ArtworkDetails({ objectNumber }) {
 
   return (
     <Paper className={classes.wrapper} square>
-      <Typography variant="h5" align="center" gutterBottom>
+      <Typography
+        variant="h5"
+        align="center"
+        className={classes.title}
+        gutterBottom
+      >
         {content.title}
       </Typography>
       <img
