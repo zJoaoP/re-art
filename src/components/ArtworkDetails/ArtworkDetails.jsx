@@ -15,12 +15,12 @@ export default function ArtworkDetails({ objectNumber }) {
   const { loading, found, content } = useArtworkDetails(objectNumber);
   const classes = useStyles();
 
-  if (!found) return <h1>Not Found</h1>;
+  if (!found) return null;
   if (loading) return <Spinner />;
 
   return (
-    <Paper square>
-      <Grid item xs container className={classes.container}>
+    <Paper style={{ margin: '4px' }}>
+      <Grid item xs container justify="center" className={classes.container}>
         <Grid item xs={12}>
           <Typography
             variant="h5"
@@ -32,17 +32,19 @@ export default function ArtworkDetails({ objectNumber }) {
           </Typography>
         </Grid>
 
-        <Grid item xs={12}>
-          <img
-            className={classes.image}
-            src={content.webImage.url}
-            alt={content.title}
-          />
-          <Typography variant="body2" align="center" gutterBottom>
-            {content.label.makerLine}
-          </Typography>
+        <Grid item xs={12} md={8}>
+          <Paper elevation={0}>
+            <img
+              className={classes.image}
+              src={content.webImage.url}
+              alt={content.title}
+            />
+            <Typography variant="body2" align="center" gutterBottom>
+              {content.label.makerLine}
+            </Typography>
+          </Paper>
         </Grid>
-        <Grid item xs={12}>
+        <Grid item xs={12} md={4}>
           <ExtensibleContainer header="Detalhes">
             <Typography align="justify" className={classes.text}>
               {content.description}

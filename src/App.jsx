@@ -7,6 +7,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import store from './store/index';
 
+import Favorites from './views/Favorites';
 import Artwork from './views/Artwork';
 import Search from './views/Search';
 import Home from './views/Home';
@@ -38,6 +39,7 @@ export default function App() {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/search" component={Search} />
+            <Route path="/favorites" component={Favorites} />
             <Route path="/artwork/:objectNumber" component={Artwork} />
           </Switch>
         </Provider>

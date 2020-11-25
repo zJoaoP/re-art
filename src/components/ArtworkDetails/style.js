@@ -7,7 +7,7 @@ const useStyles = makeStyles((theme) => ({
     marginRight: 'auto',
 
     width: '100%',
-    maxWidth: '960px',
+    maxWidth: '720px',
   },
   title: {
     [theme.breakpoints.up('sm')]: {
@@ -15,6 +15,9 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.up('md')]: {
       fontSize: '40px',
+    },
+    [theme.breakpoints.up('lg')]: {
+      fontSize: '50px',
     },
   },
   text: {

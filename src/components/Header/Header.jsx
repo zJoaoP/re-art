@@ -1,3 +1,5 @@
+import React from 'react';
+
 import {
   AppBar,
   Toolbar,
@@ -7,25 +9,31 @@ import {
 } from '@material-ui/core';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 
-import React from 'react';
+import { useHistory } from 'react-router-dom';
 
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import SearchInput from '../SearchInput/SearchInput';
 import useStyle from './style';
 
 function FavoritesButton() {
-  const classes = useStyle();
   const matches = useMediaQuery((theme) => theme.breakpoints.up('sm'));
+  const history = useHistory();
+  const classes = useStyle();
+
+  function handleClick() {
+    history.push('/favorites');
+  }
 
   return matches ? (
     <Button
       className={classes.favoritesButton}
+      onClick={handleClick}
       startIcon={<FavoriteIcon className={classes.favoriteIcon} />}
     >
       Favorites
     </Button>
   ) : (
-    <IconButton>
+    <IconButton onClick={handleClick}>
       <FavoriteIcon className={classes.favoriteIcon} />
     </IconButton>
   );

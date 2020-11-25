@@ -12,16 +12,30 @@ import Grid from '@material-ui/core/Grid';
 
 import IconButton from '@material-ui/core/IconButton';
 
+import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 
 import NoImage from '../../assets/images/no_image.jpg';
 
+import useFavorites from '../../hooks/useFavorites';
 import useStyles from './style';
 
-export default function ContentCard({ title, subtitle, url, imageUrl }) {
-  const classes = useStyles();
+export default function ContentCard({ id, title, subtitle, url, imageUrl }) {
+  const { isFavorite, changeState } = useFavorites(id);
   const hasImage = imageUrl !== undefined;
+  const classes = useStyles();
+
+  const favoriteIcon = isFavorite ? (
+    <FavoriteIcon className={classes.favorite} />
+  ) : (
+    <FavoriteBorderIcon className={classes.favorite} />
+  );
+
+  function handleFavoriteClick() {
+    changeState({ title, subtitle, url, imageUrl });
+  }
+
   return (
     <Grid container className={classes.wrapper}>
       <Grid item xs component={Card} className={classes.card}>
@@ -41,9 +55,7 @@ export default function ContentCard({ title, subtitle, url, imageUrl }) {
           </Link>
         </CardActionArea>
         <CardActions>
-          <IconButton>
-            <FavoriteIcon />
-          </IconButton>
+          <IconButton onClick={handleFavoriteClick}>{favoriteIcon}</IconButton>
           <IconButton>
             <ShareIcon />
           </IconButton>
@@ -54,6 +66,7 @@ export default function ContentCard({ title, subtitle, url, imageUrl }) {
 }
 // title, subtitle, url, image
 ContentCard.propTypes = {
+  id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,

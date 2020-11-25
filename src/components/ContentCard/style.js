@@ -15,6 +15,9 @@ const useStyles = makeStyles(() => ({
     flexDirection: 'column',
     height: '100%',
   },
+  favorite: {
+    color: '#FF0000',
+  },
 }));
 
 export default useStyles;

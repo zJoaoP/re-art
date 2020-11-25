@@ -10,10 +10,11 @@ export default function ContentGrid({ content }) {
       {content.map((artwork) => (
         <Grid item xs={12} sm={6} md={4} lg={3} key={artwork.id}>
           <ContentCard
+            id={artwork.id}
             title={artwork.title}
-            subtitle={artwork.principalOrFirstMaker}
-            url={`/artwork/${artwork.objectNumber}`}
-            imageUrl={artwork.hasImage ? artwork.webImage.url : undefined}
+            subtitle={artwork.subtitle}
+            url={artwork.url}
+            imageUrl={artwork.imageUrl}
           />
         </Grid>
       ))}
