@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function useScroll() {
+export default function useEndScroll() {
   const [final, setFinal] = React.useState(false);
 
   React.useEffect(() => {

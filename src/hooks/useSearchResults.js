@@ -8,11 +8,11 @@ import usePageUpdater from './usePageUpdater';
 import removeDuplicates from '../helpers/removeDuplicates';
 
 export default function useSearchResults() {
-  const { searchTerm, page } = useSelector((state) => state.search);
+  const { searchTerm } = useSelector((state) => state.search);
   const [loading, setLoading] = React.useState(false);
   const [content, setContent] = React.useState([]);
 
-  usePageUpdater({ loading });
+  const page = usePageUpdater({ loading, setLoading });
 
   if (searchTerm === '') {
     const history = useHistory();

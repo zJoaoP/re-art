@@ -1,17 +1,17 @@
 import React from 'react';
 
-import { useDispatch } from 'react-redux';
-import searchActions from '../actions/searchActions';
-import useScroll from './useScroll';
+import useEndScroll from './useEndScroll';
 
 export default function usePageUpdater({ loading }) {
-  const dispatch = useDispatch();
-  const scroll = useScroll();
+  const [page, setPage] = React.useState(1);
+  const scroll = useEndScroll();
 
   React.useEffect(() => {
-    if (scroll && !loading) dispatch(searchActions.nextPage());
+    if (scroll && !loading) {
+      setPage(page + 1);
+    }
     return () => {};
   }, [scroll]);
 
-  return scroll;
+  return page;
 }

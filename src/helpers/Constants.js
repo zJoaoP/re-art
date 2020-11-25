@@ -1,7 +1,5 @@
 export const SEARCH = {
   UPDATE_SEARCH_TERM: 'UPDATE_SEARCH_TERM',
-  NEXT_PAGE: 'ADVANCE_TO_NEXT_PAGE',
-  RESET_PAGE: 'RESET_PAGE',
 };
 
 export default {
