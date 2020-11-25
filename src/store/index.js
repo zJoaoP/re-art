@@ -3,8 +3,8 @@ import thunk from 'redux-thunk';
 
 import search from './search';
 
-const reducer = combineReducers({
+const reducers = combineReducers({
   search,
 });
 
-export default createStore(reducer, applyMiddleware(thunk));
+export default createStore(reducers, applyMiddleware(thunk));
