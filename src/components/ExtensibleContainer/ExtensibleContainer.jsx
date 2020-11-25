@@ -22,7 +22,7 @@ export default function ExtensibleContainer({ header, children }) {
   }
 
   return (
-    <Paper square>
+    <Paper square elevation={0}>
       <Grid container alignItems="center" justify="space-between">
         <Grid item xs={6} style={{ marginLeft: '12px' }}>
           <Typography>

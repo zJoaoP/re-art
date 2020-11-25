@@ -1,14 +1,13 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
-  wrapper: {},
   image: {
     display: 'box',
     marginLeft: 'auto',
     marginRight: 'auto',
-    maxWidth: '100%',
-    maxHeight: '800px',
-    marginBottom: '8px',
+
+    width: '100%',
+    maxWidth: '960px',
   },
   title: {
     [theme.breakpoints.up('sm')]: {
