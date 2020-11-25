@@ -15,15 +15,19 @@ import useStyle from './style';
 
 function FavoritesButton() {
   const classes = useStyle();
-  const favoriteIcon = <FavoriteIcon className={classes.favoriteIcon} />;
   const matches = useMediaQuery((theme) => theme.breakpoints.up('sm'));
 
   return matches ? (
-    <Button className={classes.favoritesButton} startIcon={favoriteIcon}>
+    <Button
+      className={classes.favoritesButton}
+      startIcon={<FavoriteIcon className={classes.favoriteIcon} />}
+    >
       Favorites
     </Button>
   ) : (
-    <IconButton>{favoriteIcon}</IconButton>
+    <IconButton>
+      <FavoriteIcon className={classes.favoriteIcon} />
+    </IconButton>
   );
 }
 
