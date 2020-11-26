@@ -9,7 +9,7 @@ import {
 } from '@material-ui/core';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import SearchInput from '../SearchInput/SearchInput';
@@ -20,20 +20,20 @@ function FavoritesButton() {
   const history = useHistory();
   const classes = useStyle();
 
-  function handleClick() {
+  function handleFavoritesClick() {
     history.push('/favorites');
   }
 
   return matches ? (
     <Button
       className={classes.favoritesButton}
-      onClick={handleClick}
+      onClick={handleFavoritesClick}
       startIcon={<FavoriteIcon className={classes.favoriteIcon} />}
     >
       Favorites
     </Button>
   ) : (
-    <IconButton onClick={handleClick}>
+    <IconButton onClick={handleFavoritesClick}>
       <FavoriteIcon className={classes.favoriteIcon} />
     </IconButton>
   );
@@ -46,9 +46,15 @@ export default function Header() {
     <div id="header">
       <AppBar className={classes.appBar}>
         <Toolbar className={classes.toolBar} disableGutters>
-          <Typography className={classes.title} noWrap>
-            Re-Art
-          </Typography>
+          <Link
+            color="inherit"
+            to="/"
+            style={{ textDecoration: 'none', color: 'black' }}
+          >
+            <Typography className={classes.title} noWrap>
+              Re-Art
+            </Typography>
+          </Link>
           <SearchInput />
           {matches ? <div className={classes.space} /> : null}
           <FavoritesButton />
