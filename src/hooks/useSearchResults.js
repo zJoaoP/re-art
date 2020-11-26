@@ -31,7 +31,7 @@ export default function useSearchResults() {
         setContent(
           page > 1
             ? removeDuplicates([...content, ...response.artObjects])
-            : removeDuplicates([...response.artObjects])
+            : removeDuplicates(response.artObjects)
         );
         setLoading(false);
       }

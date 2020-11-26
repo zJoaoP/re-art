@@ -1,4 +1,4 @@
-export default function removeDuplicates(array) {
-  const ids = Array.from(new Set(array.map((e) => e.id)));
-  return ids.map((id) => array.find((element) => element.id === id));
+export default function removeDuplicates(array, key = 'id') {
+  const uniqueKeys = Array.from(new Set(array.map((e) => e[key])));
+  return uniqueKeys.map((k) => array.find((element) => element[key] === k));
 }
