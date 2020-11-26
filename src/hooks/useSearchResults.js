@@ -39,7 +39,7 @@ export default function useSearchResults() {
     return () => {
       mounted = false;
     };
-  }, [page]);
+  }, [page, searchTerm]);
 
   return {
     loading,
