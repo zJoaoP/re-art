@@ -2,6 +2,12 @@ export const SEARCH = {
   UPDATE_SEARCH_TERM: 'UPDATE_SEARCH_TERM',
 };
 
+export const FAVORITES = {
+  REMOVE_FAVORITE: 'REMOVE_FAVORITE',
+  ADD_FAVORITE: 'ADD_FAVORITE',
+};
+
 export default {
+  FAVORITES,
   SEARCH,
 };

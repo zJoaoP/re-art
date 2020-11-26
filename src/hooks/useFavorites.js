@@ -1,20 +1,15 @@
 import React from 'react';
 
-import favorites from '../helpers/favorites';
+import { useSelector } from 'react-redux';
 
 export default function useFavorites(id) {
-  const [isFavorite, setFavorite] = React.useState(favorites.has(id));
+  const [isFavorite, setFavorite] = React.useState(false);
+  const { favorites } = useSelector((state) => state.favorites);
 
   React.useEffect(() => {
-    setFavorite(favorites.has(id));
+    setFavorite(favorites.filter((e) => e.id === id).length > 0);
     return () => {};
-  }, [favorites.has(id)]);
+  }, [favorites]);
 
-  function changeState({ title, subtitle, url, imageUrl }) {
-    if (isFavorite) favorites.remove(id);
-    else favorites.add(id, { id, title, subtitle, url, imageUrl });
-
-    setFavorite(!isFavorite);
-  }
-  return { isFavorite, changeState };
+  return isFavorite;
 }

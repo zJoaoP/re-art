@@ -16,15 +16,21 @@ import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 
+import { useDispatch } from 'react-redux';
+
+import favoriteActions from '../../actions/favoritesActions';
+import useFavorites from '../../hooks/useFavorites';
+
 import NoImage from '../../assets/images/no_image.jpg';
 
-import useFavorites from '../../hooks/useFavorites';
 import useStyles from './style';
 
 export default function ContentCard({ id, title, subtitle, url, imageUrl }) {
-  const { isFavorite, changeState } = useFavorites(id);
-  const hasImage = imageUrl !== undefined;
+  const isFavorite = useFavorites(id);
+  const dispatch = useDispatch();
   const classes = useStyles();
+
+  const hasImage = imageUrl !== undefined;
 
   const favoriteIcon = isFavorite ? (
     <FavoriteIcon className={classes.favorite} />
@@ -33,7 +39,15 @@ export default function ContentCard({ id, title, subtitle, url, imageUrl }) {
   );
 
   function handleFavoriteClick() {
-    changeState({ title, subtitle, url, imageUrl });
+    if (isFavorite) {
+      dispatch(
+        favoriteActions.removeFavorite({ id, title, subtitle, url, imageUrl })
+      );
+    } else {
+      dispatch(
+        favoriteActions.addFavorite({ id, title, subtitle, url, imageUrl })
+      );
+    }
   }
 
   return (
@@ -64,7 +78,7 @@ export default function ContentCard({ id, title, subtitle, url, imageUrl }) {
     </Grid>
   );
 }
-// title, subtitle, url, image
+
 ContentCard.propTypes = {
   id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
