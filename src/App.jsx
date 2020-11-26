@@ -31,10 +31,6 @@ const theme = createMuiTheme({
 });
 
 export default function App() {
-  store.subscribe(() => {
-    localStorage.setItem('re-art', JSON.stringify(store.getState()));
-  });
-
   return (
     <ThemeProvider theme={theme}>
       <BrowserRouter>

@@ -10,8 +10,18 @@ const reducers = combineReducers({
 });
 
 // Recovering favorites from local storage.
-const state = localStorage.getItem('re-art')
+const storedState = localStorage.getItem('re-art')
   ? JSON.parse(localStorage.getItem('re-art'))
   : {};
 
-export default createStore(reducers, state, applyMiddleware(thunk));
+const store = createStore(reducers, storedState, applyMiddleware(thunk));
+
+store.subscribe(() => {
+  const state = store.getState();
+  localStorage.setItem(
+    're-art',
+    JSON.stringify({ favorites: state.favorites })
+  );
+});
+
+export default store;
