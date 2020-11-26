@@ -13,5 +13,5 @@ export default function usePageUpdater({ loading }) {
     return () => {};
   }, [scroll]);
 
-  return page;
+  return { page, setPage };
 }

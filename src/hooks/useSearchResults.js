@@ -11,13 +11,16 @@ export default function useSearchResults() {
   const { searchTerm } = useSelector((state) => state.search);
   const [loading, setLoading] = React.useState(false);
   const [content, setContent] = React.useState([]);
+  const history = useHistory();
 
-  const page = usePageUpdater({ loading, setLoading });
+  const { page, setPage } = usePageUpdater({ loading, setLoading });
 
-  if (searchTerm === '') {
-    const history = useHistory();
-    history.push('/');
-  }
+  if (searchTerm === '') history.push('/');
+
+  React.useEffect(() => {
+    setPage(1);
+    return () => {};
+  }, [searchTerm]);
 
   React.useEffect(() => {
     let mounted = true;
@@ -36,7 +39,7 @@ export default function useSearchResults() {
     return () => {
       mounted = false;
     };
-  }, [searchTerm, page]);
+  }, [page]);
 
   return {
     loading,
