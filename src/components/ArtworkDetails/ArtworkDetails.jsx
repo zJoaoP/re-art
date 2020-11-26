@@ -11,6 +11,8 @@ import ExtensibleContainer from '../ExtensibleContainer/ExtensibleContainer';
 import Spinner from '../Spinner/Spinner';
 import useStyles from './style';
 
+import NoImage from '../../assets/images/no_image.jpg';
+
 export default function ArtworkDetails({ objectNumber }) {
   const { loading, found, content } = useArtworkDetails(objectNumber);
   const classes = useStyles();
@@ -36,7 +38,7 @@ export default function ArtworkDetails({ objectNumber }) {
           <Paper elevation={0}>
             <img
               className={classes.image}
-              src={content.webImage.url}
+              src={content.webImage?.url || NoImage}
               alt={content.title}
             />
             <Typography variant="body2" align="center" gutterBottom>
