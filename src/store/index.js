@@ -9,4 +9,9 @@ const reducers = combineReducers({
   search,
 });
 
-export default createStore(reducers, applyMiddleware(thunk));
+// Recovering favorites from local storage.
+const state = localStorage.getItem('re-art')
+  ? JSON.parse(localStorage.getItem('re-art'))
+  : {};
+
+export default createStore(reducers, state, applyMiddleware(thunk));
