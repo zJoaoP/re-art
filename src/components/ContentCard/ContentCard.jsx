@@ -50,6 +50,10 @@ export default function ContentCard({ id, title, subtitle, url, imageUrl }) {
     }
   }
 
+  function handleShareClick() {
+    navigator.clipboard.writeText(`localhost:3000${url}`);
+  }
+
   return (
     <Grid container className={classes.wrapper}>
       <Grid item xs component={Card} className={classes.card}>
@@ -70,7 +74,7 @@ export default function ContentCard({ id, title, subtitle, url, imageUrl }) {
         </CardActionArea>
         <CardActions>
           <IconButton onClick={handleFavoriteClick}>{favoriteIcon}</IconButton>
-          <IconButton>
+          <IconButton onClick={handleShareClick}>
             <ShareIcon />
           </IconButton>
         </CardActions>
