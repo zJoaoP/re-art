@@ -38,7 +38,7 @@ export default function SearchBar() {
   return (
     <Paper className={classes.wrapper} component="div">
       <InputBase
-        placeholder="Search"
+        placeholder="Buscar por.."
         onChange={handleSearchTermChange}
         onKeyPress={handleKeyPress}
         className={classes.inputBase}
