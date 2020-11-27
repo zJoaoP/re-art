@@ -30,7 +30,7 @@ function FavoritesButton() {
       onClick={handleFavoritesClick}
       startIcon={<FavoriteIcon className={classes.favoriteIcon} />}
     >
-      Favorites
+      Favoritos
     </Button>
   ) : (
     <IconButton onClick={handleFavoritesClick}>
