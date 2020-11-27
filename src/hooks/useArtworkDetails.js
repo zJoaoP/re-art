@@ -21,8 +21,8 @@ export default function useArtworkDetails(objectNumber) {
       })
       .catch(() => {
         if (mounted) {
-          setLoading(false);
           setFound(false);
+          setLoading(false);
         }
       });
     return () => {
