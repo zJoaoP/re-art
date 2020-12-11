@@ -1,6 +1,6 @@
 import React from 'react';
 
-import api from '../service/rijks';
+import api from 'service/rijks';
 
 export default function useArtworkDetails(objectNumber) {
   const [content, setContent] = React.useState(undefined);

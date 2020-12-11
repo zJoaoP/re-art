@@ -5,13 +5,13 @@ import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 
-import useArtworkDetails from '../../hooks/useArtworkDetails';
+import useArtworkDetails from 'hooks/useArtworkDetails';
 
-import ExtensibleContainer from '../ExtensibleContainer/ExtensibleContainer';
-import Spinner from '../Spinner/Spinner';
-import useStyles from './style';
+import ExtensibleContainer from 'components/ExtensibleContainer/ExtensibleContainer';
+import Spinner from 'components/Spinner/Spinner';
+import useStyles from 'components/ArtworkDetails/style';
 
-import NoImage from '../../assets/images/no_image.jpg';
+import NoImage from 'assets/images/no_image.jpg';
 
 export default function ArtworkDetails({ objectNumber }) {
   const { loading, found, content } = useArtworkDetails(objectNumber);

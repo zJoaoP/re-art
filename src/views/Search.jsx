@@ -1,10 +1,10 @@
 import React from 'react';
 
-import useSearchResults from '../hooks/useSearchResults';
+import useSearchResults from 'hooks/useSearchResults';
 
-import ContentGrid from '../components/ContentGrid/ContentGrid';
-import Spinner from '../components/Spinner/Spinner';
-import Header from '../components/Header/Header';
+import ContentGrid from 'components/ContentGrid/ContentGrid';
+import Spinner from 'components/Spinner/Spinner';
+import Header from 'components/Header/Header';
 
 // TODO: Handle empty response from museum.
 

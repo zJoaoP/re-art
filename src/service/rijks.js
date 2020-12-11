@@ -1,4 +1,4 @@
-import { RIJKS_API_URL, RIJKS_API_KEY } from '../helpers/config';
+import { RIJKS_API_URL, RIJKS_API_KEY } from 'helpers/config';
 
 const apiSettings = {
   fetchSearchTerm: async (term, page, resultsPerPage = 8) => {

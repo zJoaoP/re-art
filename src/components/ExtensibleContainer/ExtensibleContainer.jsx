@@ -11,7 +11,7 @@ import {
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import clsx from 'clsx';
 
-import useStyles from './style';
+import useStyles from 'components/ExtensibleContainer/style';
 
 export default function ExtensibleContainer({ header, children }) {
   const [expanded, setExpanded] = React.useState(false);

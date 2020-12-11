@@ -9,9 +9,9 @@ import Paper from '@material-ui/core/Paper';
 
 import { useHistory } from 'react-router-dom';
 
-import searchActions from '../../actions/searchActions';
+import searchActions from 'actions/searchActions';
 
-import useStyles from './style';
+import useStyles from 'components/SearchInput/style';
 
 export default function SearchBar() {
   const currentSearchTerm = useSelector((state) => state.search.searchTerm);

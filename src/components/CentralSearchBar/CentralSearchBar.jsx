@@ -3,9 +3,9 @@ import React from 'react';
 import Grid from '@material-ui/core/Grid';
 
 import Typography from '@material-ui/core/Typography';
-import SearchInput from '../SearchInput/SearchInput';
+import SearchInput from 'components/SearchInput/SearchInput';
 
-import useStyles from './style';
+import useStyles from 'components/SearchInput/style';
 
 export default function CentralSearchBar() {
   const classes = useStyles();

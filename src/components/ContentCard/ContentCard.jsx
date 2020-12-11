@@ -18,12 +18,12 @@ import ShareIcon from '@material-ui/icons/Share';
 
 import { useDispatch } from 'react-redux';
 
-import favoriteActions from '../../actions/favoritesActions';
-import useFavorites from '../../hooks/useFavorites';
+import favoriteActions from 'actions/favoritesActions';
+import useFavorites from 'hooks/useFavorites';
 
-import NoImage from '../../assets/images/no_image.jpg';
+import NoImage from 'assets/images/no_image.jpg';
 
-import useStyles from './style';
+import useStyles from 'components/ContentCard/style';
 
 export default function ContentCard({ id, title, subtitle, url, imageUrl }) {
   const isFavorite = useFavorites(id);

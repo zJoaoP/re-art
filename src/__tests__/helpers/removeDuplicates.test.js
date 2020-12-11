@@ -1,4 +1,4 @@
-import removeDuplicates from '../../helpers/removeDuplicates';
+import removeDuplicates from 'helpers/removeDuplicates';
 
 const mock = [
   { id: 1, name: 'Joao' },

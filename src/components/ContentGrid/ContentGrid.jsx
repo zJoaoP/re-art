@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import Grid from '@material-ui/core/Grid';
-import ContentCard from '../ContentCard/ContentCard';
+import ContentCard from 'components/ContentCard/ContentCard';
 
 export default function ContentGrid({ content }) {
   return (

@@ -1,4 +1,4 @@
-import { SEARCH } from '../helpers/constants';
+import { SEARCH } from 'helpers/constants';
 
 const updateSearchTerm = (searchTerm) => (dispatch) => {
   dispatch({

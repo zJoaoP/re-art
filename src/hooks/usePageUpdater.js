@@ -1,6 +1,6 @@
 import React from 'react';
 
-import useEndScroll from './useEndScroll';
+import useEndScroll from 'hooks/useEndScroll';
 
 export default function usePageUpdater({ loading }) {
   const [page, setPage] = React.useState(1);

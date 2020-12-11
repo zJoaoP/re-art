@@ -12,8 +12,8 @@ import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { useHistory, Link } from 'react-router-dom';
 
 import FavoriteIcon from '@material-ui/icons/Favorite';
-import SearchInput from '../SearchInput/SearchInput';
-import useStyle from './style';
+import SearchInput from 'components/SearchInput/SearchInput';
+import useStyle from 'components/SearchInput/style';
 
 function FavoritesButton() {
   const matches = useMediaQuery((theme) => theme.breakpoints.up('sm'));

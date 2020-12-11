@@ -1,8 +1,8 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 
-import favorites from './favorites';
-import search from './search';
+import favorites from 'store/favorites';
+import search from 'store/search';
 
 const reducers = combineReducers({
   favorites,

@@ -2,10 +2,10 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
-import api from '../service/rijks';
-import usePageUpdater from './usePageUpdater';
+import api from 'service/rijks';
+import usePageUpdater from 'hooks/usePageUpdater';
 
-import removeDuplicates from '../helpers/removeDuplicates';
+import removeDuplicates from 'helpers/removeDuplicates';
 
 export default function useSearchResults() {
   const { searchTerm } = useSelector((state) => state.search);

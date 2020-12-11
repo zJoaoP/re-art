@@ -8,7 +8,7 @@ import Paper from '@material-ui/core/Paper';
 
 import { Breadcrumbs as MaterialBreadcrumbs } from '@material-ui/core/';
 
-import useStyles from './style';
+import useStyles from 'components/Breadcrumbs/style';
 
 export default function Breadcrumbs({ title }) {
   const classes = useStyles();

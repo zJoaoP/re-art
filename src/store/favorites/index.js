@@ -1,4 +1,4 @@
-import { FAVORITES } from '../../helpers/constants';
+import { FAVORITES } from 'helpers/constants';
 
 const INITIAL_STATE = {
   favorites: [],

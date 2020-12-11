@@ -1,4 +1,4 @@
-import { SEARCH } from '../../helpers/constants';
+import { SEARCH } from 'helpers/constants';
 
 const INITIAL_STATE = {
   searchTerm: '',

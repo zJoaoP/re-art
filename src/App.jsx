@@ -5,12 +5,12 @@ import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import store from './store/index';
+import store from 'store/index';
 
-import Favorites from './views/Favorites';
-import Artwork from './views/Artwork';
-import Search from './views/Search';
-import Home from './views/Home';
+import Favorites from 'views/Favorites';
+import Artwork from 'views/Artwork';
+import Search from 'views/Search';
+import Home from 'views/Home';
 
 const theme = createMuiTheme({
   palette: {
